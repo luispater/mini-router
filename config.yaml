@@ -1,0 +1,134 @@
+# AI Router Configuration
+
+# Server settings
+server:
+  port: "8316"
+  shutdown_timeout: 10s
+
+models:
+  - id: 1
+    name: "gemini-2.0-flash"
+    provider_model_name: "gemini-2.0-flash"
+    display_name: "Gemini 2.0 Flash"
+    description: "Google's Gemini 2.0 Flash model"
+    supports_chat: true
+    supports_completion: true
+    supports_input_image: true
+    support_google_thinking: false
+    rpm: 15
+    tpm: 1000000
+    rpd: 1500
+    input_price_per_token: 0.0
+    output_price_per_token: 0.0
+    max_tokens: 8192
+    context_length: 1000000
+    supported_parameters: ["tools", "tool_choice", "max_tokens", "temperature", "top_p", "stop", "frequency_penalty", "presence_penalty", "seed", "response_format", "structured_outputs"]
+    provider_api_key:
+      - "AIzaSy...S6cBqxM4"
+      - "AIzaSy...J7amzb2w"
+    is_openai_compatibility: true
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    enabled: true
+    visible: false
+  - id: 2
+    name: "gemini-2.0-flash-lite"
+    provider_model_name: "gemini-2.0-flash-lite"
+    display_name: "Gemini 2.0 Flash Lite"
+    description: "Google's Gemini 2.0 Flash Lite model"
+    supports_chat: true
+    supports_completion: true
+    supports_input_image: true
+    support_google_thinking: false
+    rpm: 30
+    tpm: 1000000
+    rpd: 1500
+    input_price_per_token: 0.0
+    output_price_per_token: 0.0
+    max_tokens: 8192
+    context_length: 1048576
+    supported_parameters: ["tools", "tool_choice", "max_tokens", "temperature", "top_p", "stop", "frequency_penalty", "presence_penalty", "seed", "response_format", "structured_outputs"]
+    provider_api_key:
+      - "AIzaSy...S6cBqxM4"
+      - "AIzaSy...J7amzb2w"
+    is_openai_compatibility: true
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    enabled: true
+    visible: false
+  - id: 3
+    name: "gemini-2.5-flash-lite"
+    provider_model_name: "gemini-2.5-flash-lite-preview-06-17"
+    display_name: "Gemini 2.5 Flash Lite"
+    description: "Google's Gemini 2.5 Flash Lite"
+    supports_chat: true
+    supports_completion: true
+    supports_input_image: true
+    support_google_thinking: true
+    rpm: 15
+    tpm: 250000
+    rpd: 1000
+    input_price_per_token: 0.0
+    output_price_per_token: 0.0
+    max_tokens: 64000
+    context_length: 1000000
+    supported_parameters: ["tools", "tool_choice", "max_tokens", "temperature", "top_p", "stop", "frequency_penalty", "presence_penalty", "seed", "response_format", "structured_outputs"]
+    provider_api_key:
+      - "AIzaSy...S6cBqxM4"
+      - "AIzaSy...J7amzb2w"
+    is_openai_compatibility: true
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    enabled: true
+    visible: true
+  - id: 4
+    name: "gemini-2.5-pro"
+    provider_model_name: "gemini-2.5-pro"
+    display_name: "Gemini 2.5 Pro"
+    description: "Google's Gemini 2.5 Pro"
+    supports_chat: true
+    supports_completion: true
+    supports_input_image: true
+    support_google_thinking: true
+    rpm: 5
+    tpm: 250000
+    rpd: 100
+    input_price_per_token: 0.0
+    output_price_per_token: 0.0
+    max_tokens: 65536
+    context_length: 1000000
+    supported_parameters: ["tools", "tool_choice", "max_tokens", "temperature", "top_p", "stop", "frequency_penalty", "presence_penalty", "seed", "response_format", "structured_outputs"]
+    provider_api_key:
+      - "AIzaSy...S6cBqxM4"
+      - "AIzaSy...J7amzb2w"
+    is_openai_compatibility: true
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    enabled: true
+    visible: true
+  - id: 5
+    name: "gemini-2.5-flash"
+    provider_model_name: "gemini-2.5-flash"
+    display_name: "Gemini 2.5 Flash"
+    description: "Google's Gemini 2.5 Flash"
+    supports_chat: true
+    supports_completion: true
+    supports_input_image: true
+    support_google_thinking: true
+    rpm: 10
+    tpm: 250000
+    rpd: 250
+    input_price_per_token: 0.0
+    output_price_per_token: 0.0
+    max_tokens: 65536
+    context_length: 1000000
+    supported_parameters: ["tools", "tool_choice", "max_tokens", "temperature", "top_p", "stop", "frequency_penalty", "presence_penalty", "seed", "response_format", "structured_outputs"]
+    provider_api_key:
+      - "AIzaSy...S6cBqxM4"
+      - "AIzaSy...J7amzb2w"
+    is_openai_compatibility: true
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+    enabled: true
+    visible: true
+
+api_keys:
+  - id: 1
+    key: "sk-or-v1-..."
+    name: "Default"
+    is_active: true

@@ -1,0 +1,334 @@
+{
+  "allOf": [
+    {
+      "type": "object",
+      "required": [
+        "model",
+        "messages"
+      ],
+      "properties": {
+        "seed": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "maximum": 9223372036854776000,
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Seed",
+          "default": null
+        },
+        "stop": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stop"
+        },
+        "min_p": {
+          "type": "number",
+          "title": "Min P",
+          "default": 0
+        },
+        "model": {
+          "type": "string",
+          "title": "Model",
+          "minLength": 1
+        },
+        "top_k": {
+          "type": "integer",
+          "title": "Top K",
+          "default": -1
+        },
+        "top_p": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Top P",
+          "default": 1
+        },
+        "stream": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stream",
+          "default": false
+        },
+        "reasoning_effort": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [
+                "none",
+                "auto",
+                "low",
+                "medium",
+                "high"
+              ],
+              "title": "ReasoningEffort"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "best_of": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Best Of",
+          "default": null
+        },
+        "logprobs": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Logprobs",
+          "default": false
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "title": "ChatMessage",
+            "required": [
+              "role",
+              "content"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "title": "Role"
+              },
+              "content": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array"
+                  }
+                ],
+                "title": "Content"
+              }
+            }
+          },
+          "title": "Messages"
+        },
+        "ignore_eos": {
+          "type": "boolean",
+          "title": "Ignore Eos",
+          "default": false
+        },
+        "logit_bias": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "type": "number"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Logit Bias",
+          "default": null
+        },
+        "max_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Max Tokens",
+          "default": null
+        },
+        "min_tokens": {
+          "type": "integer",
+          "title": "Min Tokens",
+          "default": 0
+        },
+        "temperature": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Temperature",
+          "default": 0.7
+        },
+        "top_logprobs": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Top Logprobs",
+          "default": 0
+        },
+        "length_penalty": {
+          "type": "number",
+          "title": "Length Penalty",
+          "default": 1
+        },
+        "stop_token_ids": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Stop Token Ids"
+        },
+        "prompt_logprobs": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Prompt Logprobs",
+          "default": null
+        },
+        "response_format": {
+          "anyOf": [
+            {
+              "type": "object",
+              "title": "ResponseFormat",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "text",
+                    "json_object",
+                    "json_schema"
+                  ],
+                  "type": "string",
+                  "title": "Type"
+                },
+                "json_schema": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Json Schema",
+                  "default": null
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "use_beam_search": {
+          "type": "boolean",
+          "title": "Use Beam Search",
+          "default": false
+        },
+        "presence_penalty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Presence Penalty",
+          "default": 0
+        },
+        "frequency_penalty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Frequency Penalty",
+          "default": 0
+        },
+        "repetition_penalty": {
+          "type": "number",
+          "title": "Repetition Penalty",
+          "default": 1
+        },
+        "skip_special_tokens": {
+          "type": "boolean",
+          "title": "Skip Special Tokens",
+          "default": true
+        },
+        "include_stop_str_in_output": {
+          "type": "boolean",
+          "title": "Include Stop Str In Output",
+          "default": false
+        },
+        "spaces_between_special_tokens": {
+          "type": "boolean",
+          "title": "Spaces Between Special Tokens",
+          "default": true
+        }
+      }
+    }
+  ]
+}
