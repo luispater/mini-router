@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	jsonschema "github.com/luispater/mini-router/json-schema"
 	"io"
 	"log"
 	"net/http"
-	"os"
 	"sort"
 	"strings"
 	"sync"
@@ -39,14 +39,8 @@ var schemaLoader gojsonschema.JSONLoader
 
 // init function is executed when the package is initialized
 func init() {
-	// Read the JSON schema file
-	schemaData, err := os.ReadFile("json-schema/chat-completions.json")
-	// If reading the file fails, trigger a panic
-	if err != nil {
-		panic(err)
-	}
-	// Create a new byte-based JSON schema loader
-	schemaLoader = gojsonschema.NewBytesLoader(schemaData)
+	// Create a new byte-based JSON schema loader from the embedded file
+	schemaLoader = gojsonschema.NewBytesLoader(jsonschema.ChatCompletionsSchema)
 }
 
 // validateRequest validates whether the request conforms to the JSON schema
